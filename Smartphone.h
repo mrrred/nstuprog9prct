@@ -64,5 +64,8 @@ class Smartphone
     double getPrice(CURRENCY curr) const; 
     void setPrice(double price); 
 
+    void addchangeSpec(const string &field, const string &meaning) { spec.addchangeSpec(field, meaning); }
+    void delSpec(const string &field) { spec.delSpec(field); }
+
     void print();
 };

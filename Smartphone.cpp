@@ -33,13 +33,13 @@ void Smartphone::setPrice(double price)
 
 void Smartphone::print()
 {
-    cout << toString(spec.getManufacturer()) << ' ' << model << endl;
-    cout << "Color: " << toString(spec.getColor()) << endl;
-    cout << "Display size: " << spec.getDisplay() << endl;
-    cout << "Ram: " << spec.getRAM() << endl;
-    cout << "Storage: " << spec.getStorage() << endl;
-    cout << "CPU: " << toString(spec.getCPU()) << endl;
-    cout << "OS: " << toString(spec.getOS()) << endl;
+    cout << "Model: " << model << endl;
+
+    for(const auto& pair : spec.getSpecMap())
+    {
+        cout << pair.first << ": " << pair.second << endl;
+    }
+
     cout << "Price in Dollar: " << getPrice(CURRENCY::DOLLAR) << " $" << endl;
     cout << "Price in Euro: " << getPrice(CURRENCY::EURO) << " E" << endl;
     cout << "Price in Rub: " << getPrice(CURRENCY::RUB) << " R" << endl;
